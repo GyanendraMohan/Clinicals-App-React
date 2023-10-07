@@ -3,13 +3,13 @@ import ClinicalImg from "./../assets/clinical.jpg";
 
 const HomePage: React.FC = () => {
     return (
-        <div className="flex justify-center items-center py-12">
+        <div className="flex justify-center items-center min-h-screen px-4">
             {/* Left Side: Image */}
             <div className="w-1/2 flex justify-center">
                 <img
                     src={ClinicalImg}  // Replace with your image path
                     alt="Clinical App"
-                    className=" w-5/6 h-auto"
+                    className="w-4/5"
                 />
             </div>
 
@@ -29,7 +29,7 @@ const HomePage: React.FC = () => {
                 >
                     Learn More
                 </button>
-                <div className="mt-8">
+                <div className="mt-6">
                     <h2 className="text-xl font-semibold mb-4 text-center font-serif">Key Features</h2>
                     <div className="grid grid-cols-2 gap-4">
                         <div className="p-4 bg-white rounded-lg shadow-md transition transform hover:scale-105 hover:bg-slate-200">
