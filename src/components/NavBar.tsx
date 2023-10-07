@@ -10,7 +10,7 @@ const NavBar: React.FC = () => {
         textDecoration: 'none', // Remove underlines from links
     };
     return (
-        <header className="bg-blue-500 p-4 flex justify-between items-center border-b-2 border-gray-900 ">
+        <header className="bg-blue-500 p-4 flex justify-between items-center border-b-2 border-gray-900" >
             <div className="flex items-center">
                 {/* Logo */}
                 <img
@@ -19,7 +19,7 @@ const NavBar: React.FC = () => {
                     className=" w-14 h-14 rounded-full"
                 />
 
-                <h1 className="text-white text-lg ml-2">CLINICALS</h1>
+                <h1 className="text-white  ml-2 font-serif text-2xl font-bold tracking-widest">CLINICALS</h1>
             </div>
             <div className="space-x-4">
                 {/* Links with Material-UI icons */}
