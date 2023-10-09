@@ -2,8 +2,8 @@ import React from "react";
 
 const MyFooter: React.FC = () => {
     return (
-        <footer className="bg-gray-900 text-white p-6 w-full border-t-8 border-blue-900">
-            <div className="container mx-auto">
+        <footer className="bg-gray-900 text-white p-6 w-full border-t-8 border-blue-900 ">
+            <div className="container mx-auto mt-8">
                 <div className="flex justify-between items-center">
                     <div>
                         <h2 className="text-xl font-semibold font-serif">Clinicals</h2>

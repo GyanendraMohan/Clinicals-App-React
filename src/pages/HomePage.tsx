@@ -1,7 +1,9 @@
 import React from 'react'
 import ClinicalImg from "./../assets/clinical.jpg";
+import { useNavigate } from 'react-router-dom';
 
 const HomePage: React.FC = () => {
+    const navigate = useNavigate();
     return (
         <div className="flex justify-center items-center min-h-screen px-4">
             {/* Left Side: Image */}
@@ -13,6 +15,7 @@ const HomePage: React.FC = () => {
                 />
             </div>
 
+
             {/* Right Side: Description */}
             <div className="w-1/2 p-4">
                 <h1 className="text-3xl mb-4 text-center bg-blue-500 py-2 px-6 rounded text-white font-serif tracking-widest">Clinicals</h1>
@@ -23,11 +26,10 @@ const HomePage: React.FC = () => {
                 <button
                     className="bg-blue-500 text-white font-semibold py-2 px-4 rounded hover:bg-gray-900 transition duration-300 font-serif"
                     onClick={() => {
-                        // Handle button click to redirect to another page
-                        // You can use React Router for navigation
+                        navigate("/patient")
                     }}
                 >
-                    Learn More
+                    Patient Directory
                 </button>
                 <div className="mt-6">
                     <h2 className="text-xl font-semibold mb-4 text-center font-serif">Key Features</h2>
