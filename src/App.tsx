@@ -4,6 +4,7 @@ import NavBar from "./components/NavBar";
 import MyFooter from "./components/MyFooter";
 import HomePage from "./pages/HomePage";
 import PatientPage from "./pages/PatientPage";
+import AddPatientPage from "./pages/AddPatientPage";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <Routes>
         <Route path="/*" element={<HomePage />} />
         <Route path="/patient" element={<PatientPage />} />
+        <Route path="/addPatient" element={<AddPatientPage />} />
       </Routes>
       <MyFooter />
     </BrowserRouter>
