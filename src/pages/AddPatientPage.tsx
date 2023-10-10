@@ -44,7 +44,7 @@ const AddPatientPage: React.FC = () => {
             <h2 className="text-2xl font-semibold font-serif text-center">Patient Information</h2>
             <form onSubmit={handleSubmit} className="mt-4 space-y-4">
                 <div className="flex flex-col">
-                    <label htmlFor="firstName" className="text-gray-600">
+                    <label htmlFor="firstName" className="text-gray-600 font-serif">
                         First Name
                     </label>
                     <input
@@ -58,7 +58,7 @@ const AddPatientPage: React.FC = () => {
                     />
                 </div>
                 <div className="flex flex-col">
-                    <label htmlFor="lastName" className="text-gray-600">
+                    <label htmlFor="lastName" className="text-gray-600 font-serif">
                         Last Name
                     </label>
                     <input
@@ -72,7 +72,7 @@ const AddPatientPage: React.FC = () => {
                     />
                 </div>
                 <div className="flex flex-col">
-                    <label htmlFor="age" className="text-gray-600">
+                    <label htmlFor="age" className="text-gray-600 font-serif">
                         Age
                     </label>
                     <input
