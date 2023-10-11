@@ -4,3 +4,9 @@ export interface PatientData {
   lastName: string;
   age: number;
 }
+
+export interface FormData {
+  firstName: string;
+  lastName: string;
+  age: string;
+}

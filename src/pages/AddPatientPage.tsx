@@ -1,42 +1,47 @@
 import React, { useState } from 'react';
+import { FormData } from '../interfaces/types';
+import axios from 'axios';
 
 const AddPatientPage: React.FC = () => {
     // State for form fields
-    const [formData, setFormData] = useState({
+    const [formData, setFormData] = useState<FormData>({
         firstName: '',
         lastName: '',
         age: '',
     });
 
-    // State for error message
-    const [errorMessage, setErrorMessage] = useState('');
+    const [errorMessage, setErrorMessage] = useState<string>('');
 
-    // Handle form input changes
     const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const { name, value } = e.target;
         setFormData({ ...formData, [name]: value });
     };
 
-    // Handle form submission
-    const handleSubmit = (e: React.FormEvent) => {
+
+    const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
 
-        // Check if age is negative
         if (parseInt(formData.age, 10) <= 0) {
             setErrorMessage('Please Enter Valid Age');
             return;
         }
-
-        // Clear any previous error messages
         setErrorMessage('');
 
-        // You can handle form submission logic here, e.g., sending data to a server
-        console.log('Form Data:', formData);
-        setFormData({
-            firstName: '',
-            lastName: '',
-            age: '',
-        });
+        try {
+            await axios.post('http://localhost:8080/clinicalservices/api/patients', formData);
+
+
+            // console.log('Response Data:', response.data);
+            setFormData({
+                firstName: '',
+                lastName: '',
+                age: '',
+            });
+        } catch (error) {
+
+            console.error('Error submitting the form:', error);
+        }
+
     };
 
     return (
