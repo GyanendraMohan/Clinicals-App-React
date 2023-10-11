@@ -22,14 +22,14 @@ const NavBar: React.FC = () => {
                     className="w-14 h-14 rounded-full"
 
                 />
-                <h1 className="text-white  ml-2 font-serif text-2xl font-bold tracking-widest cursor-pointer">CLINICALS</h1>
+                <h1 className="text-white ml-2 font-serif text-2xl font-bold tracking-widest cursor-pointer">CLINICALS</h1>
             </Link>
             <div className="space-x-4">
                 {/* Links with Material-UI icons */}
                 <Button color="inherit" startIcon={<AddCircleIcon />}>
-                    <a href="/addPatient" style={linkStyle} className="font-serif">
+                    <Link to="/addPatient" style={linkStyle} className="font-serif">
                         Add Patient
-                    </a>
+                    </Link>
                 </Button>
             </div>
         </header>
