@@ -5,16 +5,12 @@ import Clinical from "./../assets/clinical.jpg"
 import RemoveRedEyeSharpIcon from '@mui/icons-material/RemoveRedEyeSharp';
 import HealthAndSafetySharpIcon from '@mui/icons-material/HealthAndSafetySharp';
 import { useNavigate } from 'react-router-dom';
+import { PatientData } from '../interfaces/types';
 
-interface PatientInfoProps {
-    id: number;
-    firstName: string;
-    lastName: string;
-    age: number;
-    imageUrl: string;
-}
 
-const PatientInfo: React.FC<PatientInfoProps> = ({ id, firstName, lastName, age }) => {
+
+
+const PatientInfo: React.FC<PatientData> = ({ id, firstName, lastName, age }) => {
     const navigate = useNavigate();
     return (
         <div className="max-w-md bg-white rounded-lg overflow-hidden shadow-lg flex justify-center border hover:border-blue-500 hover:transform hover:scale-105 transition-transform duration-300 ease-in-out">

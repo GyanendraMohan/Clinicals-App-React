@@ -1,72 +1,24 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import PatientInfo from "./PatientInfo";
+import axios from 'axios';
+import { PatientData } from "../interfaces/types";
+
 
 const PatientPage: React.FC = () => {
-    const patients = [
-        {
-            id: 1,
-            firstName: "John",
-            lastName: "Doe",
-            age: 35,
-            imageUrl: "https://via.placeholder.com/150", // Replace with actual image URLs
-        },
-        {
-            id: 2,
-            firstName: "Jane",
-            lastName: "Smith",
-            age: 42,
-            imageUrl: "https://via.placeholder.com/150",
-        },
-        {
-            id: 3,
-            firstName: "Michael",
-            lastName: "Johnson",
-            age: 28,
-            imageUrl: "https://via.placeholder.com/150",
-        },
-        {
-            id: 4,
-            firstName: "John",
-            lastName: "Doe",
-            age: 35,
-            imageUrl: "https://via.placeholder.com/150", // Replace with actual image URLs
-        },
-        {
-            id: 5,
-            firstName: "Jane",
-            lastName: "Smith",
-            age: 42,
-            imageUrl: "https://via.placeholder.com/150",
-        },
-        {
-            id: 6,
-            firstName: "Michael",
-            lastName: "Johnson",
-            age: 28,
-            imageUrl: "https://via.placeholder.com/150",
-        },
-        {
-            id: 7,
-            firstName: "John",
-            lastName: "Doe",
-            age: 35,
-            imageUrl: "https://via.placeholder.com/150", // Replace with actual image URLs
-        },
-        {
-            id: 8,
-            firstName: "Jane",
-            lastName: "Smith",
-            age: 42,
-            imageUrl: "https://via.placeholder.com/150",
-        },
-        {
-            id: 9,
-            firstName: "Michael",
-            lastName: "Johnson",
-            age: 28,
-            imageUrl: "https://via.placeholder.com/150",
-        },
-    ];
+    const [patients, setPatients] = useState<PatientData[]>([]);
+
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const response = await axios.get("http://localhost:8080/clinicalservices/api/patients"); // Replace with your API endpoint
+                setPatients(response.data);
+            } catch (error) {
+                console.error("Error fetching patient data:", error);
+            }
+        };
+
+        fetchData();
+    }, []);
 
     return (
         <>
@@ -74,8 +26,8 @@ const PatientPage: React.FC = () => {
             <div className="container mx-auto mt-8 my-4  flex flex-center">
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 gap-4 mx-auto">
-                    {patients.map((patient, index) => (
-                        <PatientInfo key={index} {...patient} />
+                    {patients.map((patient) => (
+                        <PatientInfo key={patient.id} {...patient} />
                     ))}
                 </div>
             </div>
