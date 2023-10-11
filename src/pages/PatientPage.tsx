@@ -4,54 +4,63 @@ import PatientInfo from "./PatientInfo";
 const PatientPage: React.FC = () => {
     const patients = [
         {
+            id: 1,
             firstName: "John",
             lastName: "Doe",
             age: 35,
             imageUrl: "https://via.placeholder.com/150", // Replace with actual image URLs
         },
         {
+            id: 2,
             firstName: "Jane",
             lastName: "Smith",
             age: 42,
             imageUrl: "https://via.placeholder.com/150",
         },
         {
+            id: 3,
             firstName: "Michael",
             lastName: "Johnson",
             age: 28,
             imageUrl: "https://via.placeholder.com/150",
         },
         {
+            id: 4,
             firstName: "John",
             lastName: "Doe",
             age: 35,
             imageUrl: "https://via.placeholder.com/150", // Replace with actual image URLs
         },
         {
+            id: 5,
             firstName: "Jane",
             lastName: "Smith",
             age: 42,
             imageUrl: "https://via.placeholder.com/150",
         },
         {
+            id: 6,
             firstName: "Michael",
             lastName: "Johnson",
             age: 28,
             imageUrl: "https://via.placeholder.com/150",
         },
         {
+            id: 7,
             firstName: "John",
             lastName: "Doe",
             age: 35,
             imageUrl: "https://via.placeholder.com/150", // Replace with actual image URLs
         },
         {
+            id: 8,
             firstName: "Jane",
             lastName: "Smith",
             age: 42,
             imageUrl: "https://via.placeholder.com/150",
         },
         {
+            id: 9,
             firstName: "Michael",
             lastName: "Johnson",
             age: 28,
