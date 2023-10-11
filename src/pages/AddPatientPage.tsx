@@ -23,7 +23,7 @@ const AddPatientPage: React.FC = () => {
 
         // Check if age is negative
         if (parseInt(formData.age, 10) <= 0) {
-            setErrorMessage('Age cannot be negative or zero.');
+            setErrorMessage('Please Enter Valid Age');
             return;
         }
 
